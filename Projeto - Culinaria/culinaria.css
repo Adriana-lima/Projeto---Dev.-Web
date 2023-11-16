@@ -1,0 +1,370 @@
+
+html,body{
+  margin:0;
+  height:120%;
+  font-family: 'Josefin Sans', sans-serif;
+
+}
+a{
+  text-decoration:none
+}
+.header{
+  position:relative;
+  overflow:hidden;
+  display:block;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  height:100%;
+  min-height:400px;
+  max-height:550px;
+  min-width:300px;
+  color:#eee;
+}
+.header:after{
+  content:"";
+  width:100%;
+  height:100%;
+  position:absolute;
+  bottom:0;
+  left:0;
+  z-index:-1;
+ background: linear-gradient(to bottom, rgba(0,0,0,0.12) 40%,rgba(27,32,48,1) 100%);
+}
+.header:before{
+  content:"";
+  width:100%;
+  height:200%;
+  position:absolute;
+  top:0;
+  left:0;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0); backface-visibility: hidden;
+    scale(1.0, 1.0);
+    transform: translateZ(0);
+  background:#000000 url(imagens/doces.jpg) 100% 0 no-repeat;
+  background-size:100%;
+  background-attachment:local;
+  animation: grow 360s  linear 10ms forwards;
+  transition:all 0.4s ease-in-out;
+  z-index:-2
+}
+.header a{
+  color:#eee
+}
+
+
+.logo{
+  background-color: rgba(0, 0, 0, 0.2);
+  border:1px solid #ffffff;
+  display:inline-flex;
+  align-items:center;
+  align-content:center;
+  margin:28px;
+  padding:0px 10px;
+  font-weight:900;
+  font-size:1.1em;
+  line-height:2;
+  box-sizing:border-box;
+  height:40px
+  
+}
+.sides, .info{
+  flex: 10 10 auto;
+  margin-left: 20px;
+  width:50%
+
+
+}
+.info{
+  width:100%;
+  padding:15% 10% 0 10%;
+  text-align:center;
+  text-shadow:0 2px 3px rgba(0,0,0,0.2)
+}
+
+.info h4, .meta{
+  font-size:0.7em
+}
+.meta{
+  font-style:italic;
+ 
+}
+@keyframes grow{
+  0% { transform: scale(1) translateY(0px)}
+  50% { transform: scale(1.2) translateY(-400px)}
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@keyframes grow {
+  0% {
+    transform: scale(1) translateY(0px)
+  }
+
+  50% {
+    transform: scale(1.2) translateY(-400px)
+  }
+}
+
+.content {
+  padding: 5% 10%;
+  text-align: justify;
+  size: 15;
+}
+.content1{
+  margin-top: 10px;
+  margin-left: 10%;
+}
+.lista{
+  font-size: 15px;
+}
+/* Adicionado estilo de mídia para tornar o menu lateral responsivo */
+@media (max-width: 768px) {
+  .sides,
+  .info {
+    width: 100%;
+    margin-left: 0;
+  }
+  .sides{
+    opacity: 100%;
+    bottom: menu;
+  }
+}
+
+.btn {
+  color: #333;
+  border: 2px solid;
+  border-radius: 3px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 5px 10px;
+  font-weight: 600;
+}
+
+
+.btn-three {
+  color: #FFF;
+  transition: all 0.5s;
+  position: relative;
+}
+.btn-three::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(255,255,255,0.1);
+  transition: all 0.3s;
+}
+.btn-three:hover::before {
+  opacity: 0 ;
+  transform: scale(0.5,0.5);
+}
+.btn-three::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border: 1px solid rgba(255,255,255,0.5);
+  transform: scale(1.2,1.2);
+  
+}
+.btn-three:hover::after {
+  opacity: 1;
+  transform: scale(1,1);
+}
+
+.modal {
+  margin-top: 10px;
+  display: none;
+  position: flex;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+
+}
+
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.carousel-container {
+  width: 80%;
+  margin: 30px auto;
+  white-space: nowrap;
+
+}
+
+.cards-wrapper {
+  display: flex; /* Adicionado para exibir os cards lado a lado */
+  flex-wrap: wrap; /* Adicionado para que os cards se movam para a próxima linha quando não houver espaço suficiente */
+}
+
+.card {
+  width: calc(33.33% - 20px); /* Ajustado para ocupar 1/3 da largura com uma margem à direita */
+  margin-right: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+}
+@media (max-width: 768px) {
+  .card {
+    width: 100%; 
+    margin-right: 0;
+  }
+}
+
+h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #555;
+}
+li{
+  font-size: 15px;
+  color:#555 ;
+  margin-left: 20px;
+}
+.caique {
+  display: flex;
+  align-items: center;
+}
+.twtr{
+  margin-top:100px
+}.btn.twtr:after{content:"\1F426";padding-left:5px}
+.footer{
+  background-color: #a6a6a6;
+  color: #333;
+  text-align: center;
+  height: 10%;
+  width: 100%;
+}
+.footer-basic {
+  padding:40px 0;
+  background-color:#e0e0e0;
+  color:#4b4c4d;
+}
+
+.footer-basic ul {
+  padding:0;
+  list-style:none;
+  text-align:center;
+  font-size:18px;
+  line-height:1.6;
+  margin-bottom:0;
+}
+
+.footer-basic li {
+  padding:0 10px;
+}
+
+.footer-basic ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.footer-basic ul a:hover {
+  opacity:1;
+}
+
+.footer-basic .social {
+  text-align:center;
+  padding-bottom:25px;
+}
+
+.footer-basic .social > a {
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  border:1px solid #545353;
+  margin:0 8px;
+  color:inherit;
+  opacity:0.75;
+}
+
+.footer-basic .social > a:hover {
+  opacity:0.9;
+}
+
+.footer-basic .copyright {
+  margin-top:15px;
+  text-align:center;
+  font-size:13px;
+  color:#aaa;
+  margin-bottom:0;
+}
+/*testando o header do usuario*/
+
+.franuitex{
+  display: flex;
+  flex-direction: column; 
+  flex-direction: row;
+} 
+
+.franui{
+  margin-bottom: 10px;
+  margin-right: 10px;
+  border-radius: 6px;
+  max-width: 100%;
+}
+@media (min-width: 600px) {
+  .franuitex {
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    text-align: bottom;
+    align-items: flex-start; 
+  }
+
+  .franui {
+    margin-bottom: 0; /* Remove o espaço entre a imagem e o texto */
+  }
